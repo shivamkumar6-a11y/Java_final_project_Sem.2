@@ -40,11 +40,11 @@ class ContactManager {
     }
     public void addContact(Contact contact) {
         contactList.add(contact);
-        System.out.println("✔ Contact added successfully!");
+        System.out.println("Contact added successfully!");
     }
     public void viewAllContacts() {
         if (contactList.isEmpty()) {
-            System.out.println("❌ No contacts found.");
+            System.out.println(" No contacts found.");
             return;
         }
         System.out.println("\n--- Contact List ---");
@@ -56,12 +56,12 @@ class ContactManager {
         boolean found = false;
         for (Contact contact : contactList) {
             if (contact.getName().equalsIgnoreCase(name)) {
-                System.out.println("🔍 Contact Found: " + contact);
+                System.out.println(" Contact Found: " + contact);
                 found = true;
             }
         }
         if (!found) {
-            System.out.println("❌ No contact found with the name: " + name);
+            System.out.println(" No contact found with the name: " + name);
         }
     }
     public void updateContact(String name, Scanner scanner) {
@@ -74,11 +74,11 @@ class ContactManager {
                 contact.setPhoneNumber(scanner.nextLine());
                 System.out.print("Enter New Email: ");
                 contact.setEmail(scanner.nextLine());
-                System.out.print("✔ Contact updated successfully!\n");
+                System.out.print("Contact updated successfully!\n");
                 return;
             }
         }
-        System.out.println("❌ Contact not found.");
+        System.out.println("Contact not found.");
     }
     public void deleteContact(String name) {
         Contact toRemove = null;
@@ -90,9 +90,9 @@ class ContactManager {
         }
         if (toRemove != null) {
             contactList.remove(toRemove);
-            System.out.println("✔ Contact deleted successfully!");
+            System.out.println("Contact deleted successfully!");
         } else {
-            System.out.println("❌ Contact not found.");
+            System.out.println(" Contact not found.");
         }
     }
 }
@@ -151,7 +151,7 @@ public class Main {
                     System.out.println("Thank you for using Contact Management System. Goodbye!");
                     break;
                 default:
-                    System.out.println("❌ Invalid choice! Please select an option from 1 to 6.");
+                    System.out.println(" Invalid choice! Please select an option from 1 to 6.");
             }
         } while (choice != 6);
     }
